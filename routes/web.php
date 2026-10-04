@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Illuminate\Http\Request;
 
 // Get routes example
 Route::get('/', function () {
@@ -8,8 +9,25 @@ Route::get('/', function () {
     return "This is coldy's page";
 });
 
+// POST route example
+
+Route::post("/formsubmitted", function (Request $request) {
+
+    $request->validate([
+        'fullname' => 'required|min:3|max:30',
+        'email' => 'required|min:3|max:30|email',
+    ]);
+
+
+    $fullname = $request->input("fullname");
+    $email = $request->input("email");
+
+    return "Your full name is  $fullname and your email is  $email!";
+})->name('formsubmitted');
+
+
 // Parameters using routes
-Route::get('/about/{firstname}/{lastname}', function ($firstname, $lastname) {
+/*  Route::get('/about/{firstname}/{lastname}', function ($firstname, $lastname) {
     return $firstname . ' ' . $lastname;
 });
 
@@ -32,4 +50,4 @@ Route::prefix("about")->group(function () {
         return view('organization');
     });
 });
-
+*/
