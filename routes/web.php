@@ -9,6 +9,11 @@ Route::get('/', function () {
     return "This is coldy's page";
 });
 
+Route::get('/contact', function () {
+    return view('contact');
+});
+
+
 // POST route example
 
 Route::post("/formsubmitted", function (Request $request) {
