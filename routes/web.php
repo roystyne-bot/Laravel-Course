@@ -5,11 +5,11 @@ use Illuminate\Http\Request;
 
 // Get routes example
 Route::get('/', function () {
-    return view('home');
+    return view('welcome');
     return "This is coldy's page";
 });
 
-Route::get('/contact', function () {
+/* Route::get('/contact', function () {
     return view('contact');
 });
 
@@ -30,6 +30,7 @@ Route::post("/formsubmitted", function (Request $request) {
     return "Your full name is  $fullname and your email is  $email!";
 })->name('formsubmitted');
 
+*/
 
 // Parameters using routes
 /*  Route::get('/about/{firstname}/{lastname}', function ($firstname, $lastname) {
