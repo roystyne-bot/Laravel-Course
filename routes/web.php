@@ -1,13 +1,47 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\PostController;
 use Illuminate\Http\Request;
 
 // Get routes example
 Route::get('/', function () {
     return view('welcome');
-    return "This is coldy's page";
 });
+
+Route::resource('posts', PostController::class);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* Route::get('/contact', function () {
     return view('contact');
